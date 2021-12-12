@@ -48,11 +48,10 @@ export async function runOnCli(
       }
     );
     child.stdout.on("data", (data) => {
-      console.log(
-        command === "help"
-          ? data.toString().replace("cargo tauri", "vite-tauri")
-          : data
-      );
+      let output = data.toString();
+      if (command === "help")
+        output = output.replace("cargo tauri", "vite-tauri");
+      console.log(output);
     });
 
     child
