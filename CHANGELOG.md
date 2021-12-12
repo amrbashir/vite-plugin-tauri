@@ -1,3 +1,12 @@
+## 0.1.10 (2021-12-12)
+
+
+### Bug Fixes
+
+* print stdout from tauri correctly ([85ed5dd](https://github.com/amrbashir/vite-plugin-tauri/commit/85ed5dd17777521aab718e6f1923c751055ff69a))
+
+
+
 ## 0.1.9 (2021-12-06)
 
 
