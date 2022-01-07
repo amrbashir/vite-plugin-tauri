@@ -22,14 +22,15 @@
   },
   "dependencies": {
     "chalk": "4.1.2",
-    "got": "11.8.3"
+    "got": "12.0.0"
   },
   "devDependencies": {
-    "conventional-changelog-cli": "^2.1.1",
+    "conventional-changelog-cli": "2.2.2",
     "prettier": "2.5.1",
-    "tsup": "5.10.3",
+    "taze": "0.4.5",
+    "tsup": "5.11.11",
     "typescript": "4.5.2",
-    "vite": "2.7.1"
+    "vite": "2.7.10"
   },
   "peerDependencies": {
     "vite": "^2.0.0"
