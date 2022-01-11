@@ -1,3 +1,12 @@
+## 0.1.11 (2022-01-11)
+
+
+### Bug Fixes
+
+* pass vite `outDir` directly to tauri-cli, fixes [#1](https://github.com/amrbashir/vite-plugin-tauri/issues/1) ([7d0fe4c](https://github.com/amrbashir/vite-plugin-tauri/commit/7d0fe4c1c2923919beb8236eac78b920ffab0ce5))
+
+
+
 ## 0.1.10 (2021-12-12)
 
 
