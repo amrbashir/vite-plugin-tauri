@@ -16,11 +16,9 @@ export async function build(args?: string[]): Promise<void> {
     {
       config: {
         build: {
-          distDir:
-            "../" +
-            (
-              await resolveConfig({}, "build", "production")
-            ).build.outDir,
+          distDir: (
+            await resolveConfig({}, "build", "production")
+          ).build.outDir,
         },
       },
     },
