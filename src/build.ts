@@ -2,6 +2,8 @@ import { resolveConfig, build as viteBuild } from "vite";
 import { initTauri, isTauriProject } from "./utils";
 import { runOnCli } from "./tauri-cli";
 import { logger } from "./logger";
+import { relative, join, dirname } from "path";
+import { findUp } from "find-up";
 
 export async function build(args?: string[]): Promise<void> {
   if (!isTauriProject()) {
@@ -16,9 +18,17 @@ export async function build(args?: string[]): Promise<void> {
     {
       config: {
         build: {
-          distDir: (
-            await resolveConfig({}, "build", "production")
-          ).build.outDir,
+          distDir: relative(
+            join(
+              dirname(
+                (await findUp("package.json")) ?? process.cwd() + "package.json"
+              ),
+              "src-tauri"
+            ),
+            (
+              await resolveConfig({}, "build", "production")
+            ).build.outDir
+          ),
         },
       },
     },
