@@ -1,3 +1,12 @@
+## [0.1.12](https://github.com/amrbashir/vite-plugin-tauri/compare/v0.1.11...v0.1.12) (2022-01-12)
+
+
+### Bug Fixes
+
+* use a relative path when building, fixes [#1](https://github.com/amrbashir/vite-plugin-tauri/issues/1) ([63a2f88](https://github.com/amrbashir/vite-plugin-tauri/commit/63a2f88b985513c919b6cdf464d8bbfa33d420cd))
+
+
+
 ## 0.1.11 (2022-01-11)
 
 
