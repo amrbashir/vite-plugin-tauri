@@ -13,22 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.0.1
         with:
-          fetch-depth: 0
+          version: latest
       - uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
           registry-url: "https://registry.npmjs.org"
-      - name: Cache .pnpm-store
-        uses: actions/cache@v2
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-      - name: Install pnpm
-        run: curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm@6
-      - run: pnpm i
+          cache: pnpm
+      - run: pnpm install
       - run: pnpm build
-      - run: pnpm type-check
+      - run: pnpm type:check
+      - run: pnpm format:check
       - run: npm publish --access public
         if: startsWith(github.ref, 'refs/tags/v')
         env:

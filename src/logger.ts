@@ -1,16 +1,16 @@
-import chalk from "chalk";
+import { cyan, lightRed, reset, bold } from "kolorist";
 
 export const logger = {
-  info: (...args: string[]): void => {
+  info: (msg: string): void => {
     console.log(
-      `${getCurrentTime()} ${chalk.bold.cyan("[vite-plugin-tauri]")} `,
-      chalk.reset(args)
+      `${getCurrentTime()} ${bold(cyan("[vite-plugin-tauri]"))} `,
+      reset(msg)
     );
   },
-  error: (...args: string[]): void => {
+  error: (msg: string): void => {
     console.error(
-      `${getCurrentTime()} ${chalk.bold.redBright("[vite-plugin-tauri]")} `,
-      chalk.reset(args)
+      `${getCurrentTime()} ${bold(lightRed("[vite-plugin-tauri]"))} `,
+      reset(msg)
     );
   },
 };
