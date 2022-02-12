@@ -6,18 +6,21 @@ Integrate [Tauri](https://github.com/tauri-apps/tauri) in a [Vite](https://githu
 
 ## Install
 
-Make sure to [setup your environment](https://tauri.studio/en/docs/getting-started/intro#setting-up-your-environment) for Tauri development.
+> Make sure to [setup your environment](https://tauri.studio/en/docs/getting-started/intro#setting-up-your-environment) for Tauri development.
 
 > This package requires Node.js version `^12.20.0 || ^14.13.1 || >=16.0.0`
 
 ```sh
 # pnpm
-pnpm add -D vite-plugin-tauri
+pnpm add -D vite-plugin-tauri @tauri-apps/cli
 # yarn
-yarn add -D vite-plugin-tauri
+yarn add -D vite-plugin-tauri @tauri-apps/cli
 # npm
-npm i -D vite-plugin-tauri
+npm i -D vite-plugin-tauri @tauri-apps/cli
 ```
+
+And only if you're using npm, add the following:
+
 ```diff
 // package.json
 {
@@ -40,14 +43,12 @@ yarn vite-tauri <subcommand>
 # npm
 npm run vite-tauri <subcommand>
 ```
+
 #### Supported Subcommands:
+
 - `dev` - Starts your Vite/Tauri app with hot reload.
 - `build` - Builds your Vite/Tauri executable and installer.
-- Other Tauri CLI [subcommands and flags](https://github.com/tauri-apps/tauri/blob/dev/tooling/cli.rs/src/cli.yml) are supported.
-
-
-#### Note:
-> Running `dev` or `build` will initialize Tauri and add `src-tauri` folder if it doesn't exist.
+- All other Tauri CLI [subcommands and flags](https://tauri.studio/docs/api/cli) are supported.
 
 ## License
 

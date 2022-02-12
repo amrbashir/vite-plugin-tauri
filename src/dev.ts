@@ -1,12 +1,12 @@
 import { createServer } from "vite";
-import { initTauri, isTauriProject } from "./utils";
-import { runOnCli } from "./tauri-cli";
+import { getTauriConfPath } from "./utils";
 import { logger } from "./logger";
+import { init } from "./init";
+import TauriCli from "@tauri-apps/cli";
 
-export async function dev(args?: string[]): Promise<void> {
-  if (!isTauriProject()) {
-    await initTauri();
-  }
+export async function dev(args?: string[]) {
+  if (!getTauriConfPath()) init([], true);
+
   logger.info("Starting Vite dev server...");
   const server = await createServer({
     clearScreen: false,
@@ -16,17 +16,21 @@ export async function dev(args?: string[]): Promise<void> {
   });
   await server.listen();
   logger.info("Vite dev server started.");
+
   logger.info("Starting Tauri...");
-  await runOnCli(
-    "dev",
-    {
-      config: {
+  TauriCli.run(
+    [
+      "dev",
+      "--config",
+      JSON.stringify({
         build: {
           devPath: `http://localhost:${server.config.server.port}`,
         },
-      },
-    },
-    args
+      }),
+      ...(args ?? []),
+    ],
+    "vite-tauri"
   );
+
   await server.close();
 }

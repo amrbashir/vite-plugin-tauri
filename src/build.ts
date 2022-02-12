@@ -1,38 +1,40 @@
 import { resolveConfig, build as viteBuild } from "vite";
-import { initTauri, isTauriProject } from "./utils";
-import { runOnCli } from "./tauri-cli";
+import { getTauriConfPath } from "./utils";
 import { logger } from "./logger";
-import { relative, join, dirname } from "path";
-import { findUp } from "find-up";
+import { relative, dirname } from "node:path";
+import TauriCli from "@tauri-apps/cli";
+import { init } from "./init";
 
-export async function build(args?: string[]): Promise<void> {
-  if (!isTauriProject()) {
-    await initTauri();
+export async function build(args?: string[]) {
+  let tauriConfPath = getTauriConfPath();
+  if (!tauriConfPath) {
+    init([], true);
+    tauriConfPath = getTauriConfPath();
   }
+
   logger.info(`Building Vite project...`);
   await viteBuild();
   logger.info(`Vite build finished.`);
+
   logger.info(`Building Tauri app...`);
-  await runOnCli(
-    "build",
-    {
-      config: {
+  TauriCli.run(
+    [
+      "build",
+      "--config",
+      JSON.stringify({
         build: {
           distDir: relative(
-            join(
-              dirname(
-                (await findUp("package.json")) ?? process.cwd() + "package.json"
-              ),
-              "src-tauri"
-            ),
-            (
-              await resolveConfig({}, "build", "production")
-            ).build.outDir
+            // at this point, `tauriConfPath` can't be null,
+            // because we made sure to initialize tauri if it weren't and got the new path.
+            dirname(tauriConfPath as string),
+            (await resolveConfig({}, "build", "production")).build.outDir
           ),
         },
-      },
-    },
-    args
+      }),
+
+      ...(args ?? []),
+    ],
+    "vite-tauri"
   );
   logger.info(`Tauri build finished.`);
 }

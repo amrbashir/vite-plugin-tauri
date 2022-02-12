@@ -2,21 +2,24 @@
 
 import { build } from "./build";
 import { dev } from "./dev";
-import { runOnCli } from "./tauri-cli";
 import { logger } from "./logger";
+import { init } from "./init";
+import TauriCli from "@tauri-apps/cli";
 
-async function run(): Promise<void> {
+async function run() {
   const cmd = process.argv[2];
   const args = process.argv.slice(3);
   switch (cmd) {
-    case "build":
-      await build(args);
-      break;
+    case "init":
+      init(args);
     case "dev":
       await dev(args);
       break;
+    case "build":
+      await build(args);
+      break;
     default:
-      await runOnCli(cmd ?? "help", {}, args);
+      TauriCli.run([cmd ?? "help", ...args, "vite-tauri"]);
   }
 }
 
