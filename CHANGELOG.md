@@ -1,3 +1,12 @@
+# [1.0.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v0.1.12...v1.0.0) (2022-02-12)
+
+
+### Features
+
+* use `@tauri-apps/cli` as a peerDeppendency ([ad1bbf4](https://github.com/amrbashir/vite-plugin-tauri/commit/ad1bbf47bf8c2f9b15bf51c09c16d05b7471013c))
+
+
+
 ## [0.1.12](https://github.com/amrbashir/vite-plugin-tauri/compare/v0.1.11...v0.1.12) (2022-01-12)
 
 
