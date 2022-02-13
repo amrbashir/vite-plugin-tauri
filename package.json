@@ -19,7 +19,8 @@
     "type:check": "tsc --noEmit",
     "format": "prettier --write src --ignore-path .gitignore",
     "format:check": "prettier --check \"./**/*.{ts,json}\" --ignore-path .gitignore",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "deps:up": "taze latest -w -i --outputRange fixed"
   },
   "dependencies": {
     "enquirer": "2.3.6",
@@ -27,18 +28,18 @@
     "kolorist": "1.5.1"
   },
   "peerDependencies": {
-    "@tauri-apps/cli": "^1.0.0-rc.0",
+    "@tauri-apps/cli": "^1.0.0-rc.2",
     "vite": "^2.0.0"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^1.0.0-rc.0",
-    "@types/node": "17.0.13",
+    "@tauri-apps/cli": "1.0.0-rc.2",
+    "@types/node": "17.0.17",
     "conventional-changelog-cli": "2.2.2",
     "prettier": "2.5.1",
     "taze": "0.4.6",
     "tsup": "5.11.13",
     "typescript": "4.5.5",
-    "vite": "2.7.13"
+    "vite": "2.8.1"
   },
   "engines": {
     "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
