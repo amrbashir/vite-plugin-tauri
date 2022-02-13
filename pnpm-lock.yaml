@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@tauri-apps/cli': ^1.0.0-rc.2
+  '@tauri-apps/cli': 1.0.0-rc.2
   '@types/node': 17.0.17
   conventional-changelog-cli: 2.2.2
   enquirer: 2.3.6
