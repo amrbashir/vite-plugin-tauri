@@ -25,7 +25,7 @@ jobs:
       - run: pnpm format:check
       - name: e2e init info
         run: |
-          pnpm create vite example --template vue
+          pnpm create vite example -- --template vue
           cd example
           pnpm install
           pnpm add .. -D
