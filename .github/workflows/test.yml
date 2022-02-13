@@ -23,13 +23,13 @@ jobs:
       - run: pnpm build
       - run: pnpm type:check
       - run: pnpm format:check
-      - name: e2e init info
-        run: |
-          pnpm create vite example -- --template vue
-          cd example
-          pnpm install
-          pnpm add .. -D
-          pnpm add @tauri-apps/cli -D
-          pnpm vite-tauri init
-          pnpm vite-tauri info
-
+      # - name: e2e init info
+      #   run: |
+      #     pnpm create vite example -- --template vue
+      #     cd example
+      #     pnpm install
+      #     pnpm add .. -D
+      #     pnpm add @tauri-apps/cli -D
+      #     pnpm vite-tauri init
+      #     pnpm vite-tauri info
+      #
