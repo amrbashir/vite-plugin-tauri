@@ -19,7 +19,7 @@ async function run() {
       await build(args);
       break;
     default:
-      TauriCli.run([cmd ?? "help", ...args, "vite-tauri"]);
+      await TauriCli.run([cmd ?? "help", ...args, "vite-tauri"], "vite-tauri");
   }
 }
 

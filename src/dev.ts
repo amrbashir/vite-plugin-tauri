@@ -18,7 +18,7 @@ export async function dev(args?: string[]) {
   logger.info("Vite dev server started.");
 
   logger.info("Starting Tauri...");
-  TauriCli.run(
+  await TauriCli.run(
     [
       "dev",
       "--config",

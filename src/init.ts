@@ -1,7 +1,7 @@
-import TauriCli from "@tauri-apps/cli";
 import { logger } from "./logger";
 import { getPackageJson } from "./utils";
 import enquirer from "enquirer";
+import TauriCli from "@tauri-apps/cli/main";
 
 export async function init(args?: string[], promptUser = false) {
   if (promptUser) {
@@ -17,7 +17,7 @@ export async function init(args?: string[], promptUser = false) {
 
   logger.info("Initializing Tauri...");
   const pkgName = getPackageJson().name;
-  TauriCli.run(
+  await TauriCli.run(
     [
       "init",
       "--app-name",
