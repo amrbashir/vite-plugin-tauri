@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v1.0.0...v1.1.0) (2022-02-14)
+
+
+### Features
+
+* use `TAURI_PATH_DEPTH` env if it exists ([b5224fb](https://github.com/amrbashir/vite-plugin-tauri/commit/b5224fb48b0d96f034f8a13d5829e7c307ae2bf4))
+
+
+
 # [1.0.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v0.1.12...v1.0.0) (2022-02-12)
 
 
