@@ -1,7 +1,7 @@
 import { logger } from "./logger";
 import { getPackageJson } from "./utils";
 import enquirer from "enquirer";
-import TauriCli from "@tauri-apps/cli/main";
+import TauriCli from "@tauri-apps/cli";
 
 export async function init(args?: string[], promptUser = false) {
   if (promptUser) {
