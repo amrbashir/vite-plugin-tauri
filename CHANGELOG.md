@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/amrbashir/vite-plugin-tauri/compare/v1.1.0...v1.1.1) (2022-02-21)
+
+
+### Bug Fixes
+
+* fix `ERROR_MODULE_NOT_FOUND` due to wrong import, fix [#2](https://github.com/amrbashir/vite-plugin-tauri/issues/2) ([a0efed5](https://github.com/amrbashir/vite-plugin-tauri/commit/a0efed5659ac5e0690d0dba5401295b7eb5c0f72))
+
+
+
 # [1.1.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v1.0.0...v1.1.0) (2022-02-14)
 
 
