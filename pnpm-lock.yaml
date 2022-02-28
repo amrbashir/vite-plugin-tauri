@@ -4,7 +4,6 @@ specifiers:
   '@tauri-apps/cli': 1.0.0-rc.4
   '@types/node': 17.0.17
   conventional-changelog-cli: 2.2.2
-  enquirer: 2.3.6
   fast-glob: 3.2.11
   kolorist: 1.5.1
   prettier: 2.5.1
@@ -14,7 +13,6 @@ specifiers:
   vite: 2.8.2
 
 dependencies:
-  enquirer: 2.3.6
   fast-glob: 3.2.11
   kolorist: 1.5.1
 
@@ -296,11 +294,6 @@ packages:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
     dev: true
-
-  /ansi-colors/4.1.1:
-    resolution: {integrity: sha512-JoX0apGbHaUJBNl6yF+p6JAFYZ666/hhCGKN5t9QFjbJQKUU/g8MNbFDbvfrgKXvI1QpZplPOnwIo99lX/AAmA==}
-    engines: {node: '>=6'}
-    dev: false
 
   /ansi-regex/2.1.1:
     resolution: {integrity: sha1-w7M6te42DYbg5ijwRorn7yfWVN8=}
@@ -844,13 +837,6 @@ packages:
       iconv-lite: 0.6.3
     dev: true
     optional: true
-
-  /enquirer/2.3.6:
-    resolution: {integrity: sha512-yjNnPr315/FjS4zIsUxYguYUPP2e1NK4d7E7ZOLiyYCcbFBiTMyID+2wvm2w6+pZ/odMA7cRkjhsPbltwBOrLg==}
-    engines: {node: '>=8.6'}
-    dependencies:
-      ansi-colors: 4.1.1
-    dev: false
 
   /env-paths/2.2.1:
     resolution: {integrity: sha512-+h1lkLKhZMTYjog1VEpJNG7NZJWcuc2DDk/qsqSTRRCOXiLjeQ1d1/udrUGhqMxUgAlwKNZ0cf2uqan5GLuS2A==}

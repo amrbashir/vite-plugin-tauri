@@ -23,7 +23,6 @@
     "deps:up": "taze latest -w -i --outputRange fixed"
   },
   "dependencies": {
-    "enquirer": "2.3.6",
     "fast-glob": "3.2.11",
     "kolorist": "1.5.1"
   },

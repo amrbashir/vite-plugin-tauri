@@ -8,7 +8,7 @@ import TauriCli from "@tauri-apps/cli";
 export async function build(args?: string[]) {
   let tauriConfPath = getTauriConfPath();
   if (!tauriConfPath) {
-    init([], true);
+    await init([], true);
     tauriConfPath = getTauriConfPath();
   }
 

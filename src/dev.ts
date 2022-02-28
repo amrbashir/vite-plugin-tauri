@@ -5,7 +5,7 @@ import { init } from "./init";
 import TauriCli from "@tauri-apps/cli";
 
 export async function dev(args?: string[]) {
-  if (!getTauriConfPath()) init([], true);
+  if (!getTauriConfPath()) await init([], true);
 
   logger.info("Starting Vite dev server...");
   const server = await createServer({

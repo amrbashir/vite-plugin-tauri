@@ -11,7 +11,7 @@ async function run() {
   const args = process.argv.slice(3);
   switch (cmd) {
     case "init":
-      init(args);
+      await init(args);
     case "dev":
       await dev(args);
       break;

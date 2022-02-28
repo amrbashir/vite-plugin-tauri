@@ -1,16 +1,12 @@
 import { logger } from "./logger";
-import { getPackageJson } from "./utils";
-import enquirer from "enquirer";
+import { confirm, getPackageJson } from "./utils";
 import TauriCli from "@tauri-apps/cli";
 
 export async function init(args?: string[], promptUser = false) {
   if (promptUser) {
-    const { confirmed } = await enquirer.prompt<{ confirmed: boolean }>({
-      type: "confirm",
-      name: "confirmed",
-      message:
-        "Couldn't recognize the current directory as a Tauri project, would you like to initialize Tauri?",
-    });
+    const confirmed = await confirm(
+      "Couldn't find a Tauri project in current directory, would you like to initialize a new one?"
+    );
 
     if (!confirmed) process.exit(0);
   }
