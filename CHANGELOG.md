@@ -1,3 +1,14 @@
+## [1.1.2](https://github.com/amrbashir/vite-plugin-tauri/compare/v1.1.1...v1.1.2) (2022-02-28)
+
+
+### Bug Fixes
+
+* fix running subcommands other than `init, dev, build` ([0094010](https://github.com/amrbashir/vite-plugin-tauri/commit/009401058c1df2b7ae1e4e2e1a28aacc5310f080))
+* prevent `init` subcommand also running `dev` ([c31e1a5](https://github.com/amrbashir/vite-plugin-tauri/commit/c31e1a5982af841ca17da9f94b160518b6fc7e0d))
+* resolve vite outDir before passing to tauri cli ([99f648d](https://github.com/amrbashir/vite-plugin-tauri/commit/99f648d3005b5c5e805aacdd3e0f98649a3261d2))
+
+
+
 ## [1.1.1](https://github.com/amrbashir/vite-plugin-tauri/compare/v1.1.0...v1.1.1) (2022-02-21)
 
 
