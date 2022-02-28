@@ -12,6 +12,7 @@ async function run() {
   switch (cmd) {
     case "init":
       await init(args);
+      break;
     case "dev":
       await dev(args);
       break;
