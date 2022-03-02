@@ -19,7 +19,7 @@ export function getPackageJson(): { name: string } {
   return JSON.parse(readFileSync("package.json", "utf8"));
 }
 
-export async function confirm(msg: string): Promise<boolean> {
+export function confirm(msg: string): Promise<boolean> {
   return new Promise((resolve, reject) => {
     const question = `${green("?")} ${bold(msg)} ${gray("(Y/n)")} `;
     process.stdout.write(question);
