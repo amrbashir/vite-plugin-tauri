@@ -1,5 +1,7 @@
 ## [1.1.3](https://github.com/amrbashir/vite-plugin-tauri/compare/v1.1.2...v1.1.3) (2022-05-02)
 
+### Misc.
+
 * update dependencies
 
 
