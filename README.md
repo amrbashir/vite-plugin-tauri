@@ -8,8 +8,6 @@ Integrate [Tauri](https://github.com/tauri-apps/tauri) in a [Vite](https://githu
 
 > Make sure to [setup your environment](https://tauri.studio/en/docs/getting-started/intro#setting-up-your-environment) for Tauri development.
 
-> This package requires Node.js version `^12.20.0 || ^14.13.1 || >=16.0.0`
-
 ```sh
 # pnpm
 pnpm add -D vite-plugin-tauri @tauri-apps/cli
