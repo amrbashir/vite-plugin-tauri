@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-tauri",
-  "version": "1.1.3",
+  "version": "2.0.0",
   "description": "Integrate Tauri in a Vite project to build cross-platform apps.",
   "repository": "https://github.com/amrbashir/vite-plugin-tauri.git",
   "author": "Amr Bashir <amr.bashir2015@gmail.com>",
@@ -19,8 +19,7 @@
     "type:check": "tsc --noEmit",
     "format": "prettier --write src --ignore-path .gitignore",
     "format:check": "prettier --check \"./**/*.{ts,json}\" --ignore-path .gitignore",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "deps:up": "taze latest -w -i --outputRange fixed"
+    "deps:up": "pnpm dlx taze latest -w -i --outputRange fixed"
   },
   "dependencies": {
     "fast-glob": "3.2.11",
@@ -33,11 +32,9 @@
   "devDependencies": {
     "@tauri-apps/cli": "1.0.0-rc.13",
     "@types/node": "17.0.39",
-    "conventional-changelog-cli": "2.2.2",
     "prettier": "2.6.2",
-    "taze": "0.7.3",
     "tsup": "6.0.1",
-    "typescript": "4.7.2",
+    "typescript": "4.7.3",
     "vite": "2.9.9"
   },
   "engines": {

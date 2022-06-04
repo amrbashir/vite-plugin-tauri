@@ -1,3 +1,11 @@
+# [2.0.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v1.1.3...v2.0.0) (2022-06-04)
+
+### Breaking Changes
+
+* Bump minimum supported Node.js version to `14.6.0`
+
+
+
 ## [1.1.3](https://github.com/amrbashir/vite-plugin-tauri/compare/v1.1.2...v1.1.3) (2022-05-02)
 
 ### Misc.
