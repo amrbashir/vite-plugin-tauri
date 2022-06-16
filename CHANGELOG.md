@@ -1,3 +1,11 @@
+# [2.1.0](https://github.com/amrbashir/vite-plugin-tauri/compare/2.0.0...v2.1.0) (2022-06-12)
+
+### What's Changed
+
+* Update `@tauri-apps/cli` to `v1.0.0`
+
+
+
 # [2.0.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v1.1.3...v2.0.0) (2022-06-04)
 
 ### Breaking Changes
