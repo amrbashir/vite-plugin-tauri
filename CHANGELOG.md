@@ -1,3 +1,11 @@
+# [2.2.0](https://github.com/amrbashir/vite-plugin-tauri/compare/2.1.0...v2.2.0) (2022-07-24)
+
+### What's Changed
+
+* Update `vite` peerDependency to `>= 2` which adds vite@3 support
+
+
+
 # [2.1.0](https://github.com/amrbashir/vite-plugin-tauri/compare/2.0.0...v2.1.0) (2022-06-12)
 
 ### What's Changed
