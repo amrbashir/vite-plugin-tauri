@@ -1,7 +1,7 @@
-import { resolveConfig, build as viteBuild } from "vite";
+import { build as viteBuild, resolveConfig } from "vite";
 import { getTauriConfPath } from "./utils";
 import { logger } from "./logger";
-import { relative, dirname, resolve } from "node:path";
+import { dirname, relative, resolve } from "node:path";
 import { init } from "./init";
 import TauriCli from "@tauri-apps/cli";
 
@@ -25,7 +25,7 @@ export async function build(args?: string[]) {
         build: {
           distDir: relative(
             // at this point, `tauriConfPath` can't be null,
-            // because we made sure to initialize tauri if it wasn't and got the new path.
+            // because tauri is initialized if it weren't
             dirname(tauriConfPath as string),
             resolve(
               (

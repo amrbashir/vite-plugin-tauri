@@ -1,4 +1,4 @@
-import { cyan, lightRed, reset, bold } from "kolorist";
+import { bold, cyan, lightRed, reset } from "kolorist";
 
 export const logger = {
   info: (msg: string) => {
