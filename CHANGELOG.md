@@ -1,4 +1,11 @@
-# [2.2.0](https://github.com/amrbashir/vite-plugin-tauri/compare/2.1.0...v2.2.0) (2022-07-24)
+# [2.3.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v2.3.0...v2.2.0) (2022-09-26)
+
+### What's Changed
+
+* Auto-fill `beforeDevCommand` and `beforeBuildCommand` when initializing the tauri project.
+
+
+# [2.2.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v2.1.0...v2.2.0) (2022-07-24)
 
 ### What's Changed
 
@@ -6,7 +13,7 @@
 
 
 
-# [2.1.0](https://github.com/amrbashir/vite-plugin-tauri/compare/2.0.0...v2.1.0) (2022-06-12)
+# [2.1.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v2.0.0...v2.1.0) (2022-06-12)
 
 ### What's Changed
 

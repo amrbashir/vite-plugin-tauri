@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-tauri",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Integrate Tauri in a Vite project to build cross-platform apps.",
   "repository": "https://github.com/amrbashir/vite-plugin-tauri.git",
   "author": "Amr Bashir <amr.bashir2015@gmail.com>",
