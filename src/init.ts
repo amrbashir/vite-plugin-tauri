@@ -24,6 +24,10 @@ export async function init(args?: string[], promptUser = false) {
       "Injected by vite-plugin-tauri",
       "--dev-path",
       "Injected by vite-plugin-tauri",
+      "--before-build-command",
+      "",
+      "--before-dev-command",
+      "",
       ...(args ?? []),
     ],
     "vite-tauri"
