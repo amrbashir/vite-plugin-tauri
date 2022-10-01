@@ -17,37 +17,71 @@ yarn add -D vite-plugin-tauri @tauri-apps/cli
 npm i -D vite-plugin-tauri @tauri-apps/cli
 ```
 
-And only if you're using npm, add the following:
+## Usage
+
+```ts
+// vite.config.js
+import { defineConfig } from 'vite'
+import { tauri } from "vite-plugin-tauri" // 1. import the plugin
+
+export default defineConfig({
+  plugins: [
+    tauri(), // 2. add it to the plugins list
+  ]
+})
+```
+
+## Options
+
+### `debug`
+
+- **Type:** `bool`
+- **Default:** `false`
+
+  Enable or disable building Tauri in debug mode.
+
+## Advanced Usage
+
+### Use a separate config for Tauri
+
+Create a `vite.config.tauri.js` with the following content
+
+```ts
+import { defineConfig, mergeConfig } from "vite";
+import baseViteConfig from "./vite.config";
+import { tauri } from "vite-plugin-tauri";
+
+export default defineConfig(
+  mergeConfig(
+    baseViteConfig,
+    defineConfig({
+      plugins: [
+        tauri()
+      ],
+    })
+  )
+);
+```
+
+Modify `package.json`:
 
 ```diff
 // package.json
 {
+  ..
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview",
-+   "vite-tauri": "vite-tauri",
-  }
++    "dev:tauri": "vite --config vite.config.tauri.js",
++    "build:tauri": "vite build --config vite.config.tauri.js",
+    "preview": "vite preview"
+  },
+  ..
 }
 ```
 
-## Usage
-
-```sh
-# pnpm
-pnpm vite-tauri <subcommand>
-# yarn
-yarn vite-tauri <subcommand>
-# npm
-npm run vite-tauri <subcommand>
-```
-
-#### Supported Subcommands:
-
-- `dev` - Starts your Vite/Tauri app with hot reload.
-- `build` - Builds your Vite/Tauri executable and installer.
-- All other Tauri CLI [subcommands and flags](https://tauri.studio/docs/api/cli) are supported.
+Now you can build or develop Tauri without chaning your existing web dev flow.
 
 ## License
 
-[MIT](./LICENSE) License
+[MIT](./LICENSE) © Amr Bashir

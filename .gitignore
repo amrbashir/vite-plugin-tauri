@@ -6,12 +6,10 @@ yarn-error.log*
 
 node_modules/
 
-example/
-
 .vscode/
 .idea/
 
 *.tgz
 
-bin/
-tauri-cli-v*
+/dist
+/example/dist

@@ -21,14 +21,19 @@ jobs:
           cache: pnpm
       - run: pnpm install
       - run: pnpm build
-      - run: pnpm type:check
+      - run: pnpm ts:check
       - run: pnpm format:check
-      - name: e2e init info
+      - name: install stable
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+      - name: install system dependencies
         run: |
-          pnpm create vite example --template vue
+          sudo apt-get update
+          sudo apt-get install -y libgtk-3-dev webkit2gtk-4.0 libayatana-appindicator3-dev librsvg2-dev patchelf
+      - name: build example
+        run: |
           cd example
           pnpm i
-          pnpm add .. -D
-          pnpm add @tauri-apps/cli -D
-          pnpm vite-tauri init
-          pnpm vite-tauri info
+          pnpm build:tauri

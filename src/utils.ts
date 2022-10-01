@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { green, bold, gray, reset } from "kolorist";
-import readline from "readline";
+import TauriCli from "@tauri-apps/cli";
 import fg from "fast-glob";
 
 export function getTauriConfPath(): string | null {
@@ -38,4 +38,35 @@ export function confirm(msg: string): Promise<boolean> {
       }
     });
   });
+}
+
+export async function initTauri(args?: string[]) {
+  const confirmed = await confirm(
+    "Couldn't find a Tauri project in current directory, would you like to initialize a new one?"
+  );
+
+  if (!confirmed) process.exit(0);
+
+  console.log("Initializing Tauri...");
+  const pkgName = getPackageJson().name;
+  await TauriCli.run(
+    [
+      "init",
+      "--app-name",
+      pkgName ?? "tauri-app",
+      "--window-title",
+      (pkgName ?? "tauri-app") + " window",
+      "--dist-dir",
+      `Inject by vite-plugin-tauri, you can change this if you want to use tauri cli directly`,
+      "--dev-path",
+      `Inject by vite-plugin-tauri, you can change this if you want to use tauri cli directly`,
+      "--before-build-command",
+      "",
+      "--before-dev-command",
+      "",
+      ...(args ?? []),
+    ],
+    "vite-tauri"
+  );
+  console.log("Tauri initialized.");
 }
