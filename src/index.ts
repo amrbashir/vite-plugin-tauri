@@ -73,7 +73,7 @@ export function tauri(options?: {
           tauriConfPath = getTauriConfPath();
         }
 
-        TauriCli.run(
+        await TauriCli.run(
           [
             "build",
             "--config",
