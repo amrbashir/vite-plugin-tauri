@@ -13,10 +13,6 @@ export function tauri(options?: {
       name: "vite-plugin-tauri:serve",
       apply: "serve",
       enforce: "post",
-      config: () => ({
-        clearScreen: false,
-        server: { open: false },
-      }),
       configResolved(config) {
         viteConfig = config;
       },

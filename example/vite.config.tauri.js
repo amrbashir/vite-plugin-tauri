@@ -8,6 +8,10 @@ export default defineConfig(
     baseViteConfig,
     defineConfig({
       plugins: [tauri()],
+      clearScreen: false,
+      server: {
+        open: false,
+      }
     })
   )
 );

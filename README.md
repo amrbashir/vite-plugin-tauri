@@ -27,7 +27,13 @@ import { tauri } from "vite-plugin-tauri" // 1. import the plugin
 export default defineConfig({
   plugins: [
     tauri(), // 2. add it to the plugins list
-  ]
+  ],
+
+  // 3. optional but recommended
+  clearScreen: false,
+  server: {
+    open: false
+  },
 })
 ```
 
@@ -58,6 +64,12 @@ export default defineConfig(
       plugins: [
         tauri()
       ],
+
+      // optional but recommended
+      clearScreen: false,
+      server: { 
+        open: false,
+      },
     })
   )
 );
