@@ -1,3 +1,9 @@
+# [3.0.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.0.0...v2.3.0) (2022-10-1)
+
+### What's Changed
+
+* Refactored the plugin to be a proper Vite plugin. Consult [README.md](https://github.com/amrbashir/vite-plugin-tauri#usage) for how to use it.
+
 # [2.3.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v2.3.0...v2.2.0) (2022-09-26)
 
 ### What's Changed
