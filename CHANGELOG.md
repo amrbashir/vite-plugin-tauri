@@ -1,3 +1,9 @@
+# [3.0.1](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.0.1...v3.0.0) (2022-10-1)
+
+### What's Changed
+
+* Fix passing `debug` option to tauri cli in build mode.
+
 # [3.0.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.0.0...v2.3.0) (2022-10-1)
 
 ### What's Changed
