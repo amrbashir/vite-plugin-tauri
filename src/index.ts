@@ -86,7 +86,7 @@ export function tauri(options?: {
                 ),
               },
             }),
-            options?.debug ? "--debug" : "",
+            ...(options?.debug ? ["--debug"] : []),
           ],
           "vite-plugin-tauri"
         );
