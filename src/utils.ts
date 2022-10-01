@@ -1,5 +1,4 @@
 import { readFileSync } from "node:fs";
-import { green, bold, gray, reset } from "kolorist";
 import TauriCli from "@tauri-apps/cli";
 import fg from "fast-glob";
 
@@ -19,9 +18,14 @@ export function getPackageJson(): { name: string } {
   return JSON.parse(readFileSync("package.json", "utf8"));
 }
 
+const GREEN = "\x1b[32m"
+const BOLD = "\x1b[1m"
+const DIM = "\x1b[2m";
+const RESET = "\x1b[0m";
+
 export function confirm(msg: string): Promise<boolean> {
   return new Promise((resolve, reject) => {
-    const question = `${green("?")} ${bold(msg)} ${gray("(Y/n)")} `;
+    const question = `${GREEN}? ${RESET}${BOLD}${msg}${RESET} ${DIM}(Y/n)${RESET}`;
     process.stdout.write(question);
     process.stdin.setRawMode(true);
     process.stdin.once("data", (data) => {
@@ -57,9 +61,9 @@ export async function initTauri(args?: string[]) {
       "--window-title",
       (pkgName ?? "tauri-app") + " window",
       "--dist-dir",
-      `Inject by vite-plugin-tauri, you can change this if you want to use tauri cli directly`,
+      `Injected by vite-plugin-tauri, you can change this if you want to use tauri cli directly`,
       "--dev-path",
-      `Inject by vite-plugin-tauri, you can change this if you want to use tauri cli directly`,
+      `Injected by vite-plugin-tauri, you can change this if you want to use tauri cli directly`,
       "--before-build-command",
       "",
       "--before-dev-command",

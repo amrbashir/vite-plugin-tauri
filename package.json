@@ -20,8 +20,7 @@
     "deps:up": "pnpm dlx taze latest -w -i"
   },
   "dependencies": {
-    "fast-glob": "3.2.12",
-    "kolorist": "1.6.0"
+    "fast-glob": "3.2.12"
   },
   "peerDependencies": {
     "@tauri-apps/cli": ">= 1",
