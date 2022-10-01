@@ -18,8 +18,8 @@ export function getPackageJson(): { name: string } {
   return JSON.parse(readFileSync("package.json", "utf8"));
 }
 
-const GREEN = "\x1b[32m"
-const BOLD = "\x1b[1m"
+const GREEN = "\x1b[32m";
+const BOLD = "\x1b[1m";
 const DIM = "\x1b[2m";
 const RESET = "\x1b[0m";
 

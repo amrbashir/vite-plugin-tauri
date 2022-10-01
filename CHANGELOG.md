@@ -1,3 +1,10 @@
+# [3.0.1](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.0.2...v3.0.1) (2022-10-1)
+
+### What's Changed
+
+* Removed internal modification of vite config to disable `clearScreen` and `server.open` and delegate it to the user.
+* Removed `kolorist` dependency to reduce package size.
+
 # [3.0.1](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.0.1...v3.0.0) (2022-10-1)
 
 ### What's Changed
