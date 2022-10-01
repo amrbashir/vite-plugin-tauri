@@ -72,8 +72,8 @@ Modify `package.json`:
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-+    "dev:tauri": "vite --config vite.config.tauri.js",
-+    "build:tauri": "vite build --config vite.config.tauri.js",
++   "dev:tauri": "vite --config vite.config.tauri.js",
++   "build:tauri": "vite build --config vite.config.tauri.js",
     "preview": "vite preview"
   },
   ..
