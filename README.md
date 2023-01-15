@@ -22,7 +22,7 @@ npm i -D vite-plugin-tauri @tauri-apps/cli
 ```ts
 // vite.config.js
 import { defineConfig } from 'vite'
-import { tauri } from "vite-plugin-tauri" // 1. import the plugin
+import tauri from "vite-plugin-tauri" // 1. import the plugin
 
 export default defineConfig({
   plugins: [
@@ -55,7 +55,7 @@ Create a `vite.config.tauri.js` with the following content
 ```ts
 import { defineConfig, mergeConfig } from "vite";
 import baseViteConfig from "./vite.config";
-import { tauri } from "vite-plugin-tauri";
+import tauri from "vite-plugin-tauri";
 
 export default defineConfig(
   mergeConfig(
@@ -67,7 +67,7 @@ export default defineConfig(
 
       // optional but recommended
       clearScreen: false,
-      server: { 
+      server: {
         open: false,
       },
     })

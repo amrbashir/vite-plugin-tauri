@@ -90,3 +90,5 @@ export function tauri(options?: {
     },
   ];
 }
+
+export default tauri;
