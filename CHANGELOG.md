@@ -10,6 +10,8 @@
     import tauri from "vite-plugin-tauri"
     ```
 
+- Detect `Tauri.toml` file when detecting if there is a Tauri project is initialized or not.
+
 # [3.0.1](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.0.2...v3.0.1) (2022-10-1)
 
 ### What's Changed

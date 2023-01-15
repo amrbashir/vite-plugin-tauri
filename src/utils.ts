@@ -6,7 +6,7 @@ export function getTauriConfPath(): string | null {
   const tauriDepthEnv = process.env.TAURI_PATH_DEPTH;
   const deep = tauriDepthEnv ? parseInt(tauriDepthEnv) : 3;
 
-  return fg.sync("**/tauri.conf.(json|json5)", {
+  return fg.sync("**/(tauri.conf.(json|json5)|Tauri.toml)", {
     absolute: true,
     unique: true,
     ignore: ["node_modules/**", "target/**"],
