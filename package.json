@@ -15,8 +15,8 @@
     "build": "tsup src/index.ts --format esm --dts --clean",
     "watch": "tsup src/index.ts --watch --format esm --dts --clean",
     "ts:check": "tsc --noEmit",
-    "format": "prettier --write \"./**/*.{js,ts,json}\" --ignore-path .gitignore",
-    "format:check": "prettier --check \"./**/*.{js,ts,json}\" --ignore-path .gitignore",
+    "format": "prettier --write \"./**/*.{js,ts,json,vue,html}\" --ignore-path .gitignore",
+    "format:check": "prettier --check \"./**/*.{js,ts,json,vue,html}\" --ignore-path .gitignore",
     "deps:up": "pnpm dlx taze latest -w -i"
   },
   "dependencies": {
