@@ -1,3 +1,7 @@
+# Unreleased
+
+- Fix zombie tauri process when closing the vite dev server using <kbd>Ctrl + C</kbd>
+
 # [3.1.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.1.0...v3.0.2) (2022-10-1)
 
 ### What's Changed

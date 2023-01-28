@@ -52,6 +52,9 @@ export function tauri(options?: {
             ],
             "vite-plugin-tauri"
           );
+
+          process.on("SIGTERM", () => TauriCli.killDev());
+          process.on("exit", () => TauriCli.killDev());
         });
       },
     },
