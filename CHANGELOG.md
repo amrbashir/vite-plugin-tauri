@@ -1,4 +1,4 @@
-# [3.1.1](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.1.0...v3.0.2) (2022-10-1)
+# [3.1.1](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.1.1...v3.1.0)) (2023-5-5)
 
 ### What's Changed
 
