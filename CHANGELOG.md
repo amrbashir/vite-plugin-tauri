@@ -1,16 +1,14 @@
 # Unreleased
 
+# [3.2.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.2.0...v3.1.1) (2023-5-6)
+
 - Add option to specify the rust build target
 
 # [3.1.1](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.1.1...v3.1.0) (2023-5-5)
 
-### What's Changed
-
 - Updated dependencies
 
 # [3.1.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.1.0...v3.0.2) (2022-10-1)
-
-### What's Changed
 
 - Add a default export to the plugin which allows two styles of importing:
 
@@ -27,38 +25,26 @@
 
 # [3.0.2](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.0.2...v3.0.1) (2022-10-1)
 
-### What's Changed
-
 - Removed internal modification of vite config to disable `clearScreen` and `server.open` and delegate it to the user.
 - Removed `kolorist` dependency to reduce package size.
 
 # [3.0.1](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.0.1...v3.0.0) (2022-10-1)
 
-### What's Changed
-
 - Fix passing `debug` option to tauri cli in build mode.
 
 # [3.0.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.0.0...v2.3.0) (2022-10-1)
-
-### What's Changed
 
 - Refactored the plugin to be a proper Vite plugin. Consult [README.md](https://github.com/amrbashir/vite-plugin-tauri#usage) for how to use it.
 
 # [2.3.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v2.3.0...v2.2.0) (2022-09-26)
 
-### What's Changed
-
 - Auto-fill `beforeDevCommand` and `beforeBuildCommand` when initializing the tauri project.
 
 # [2.2.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v2.1.0...v2.2.0) (2022-07-24)
 
-### What's Changed
-
 - Update `vite` peerDependency to `>= 2` which adds vite@3 support
 
 # [2.1.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v2.0.0...v2.1.0) (2022-06-12)
-
-### What's Changed
 
 - Update `@tauri-apps/cli` to `v1.0.0`
 
