@@ -21,8 +21,8 @@ npm i -D vite-plugin-tauri @tauri-apps/cli
 
 ```ts
 // vite.config.js
-import { defineConfig } from 'vite'
-import tauri from "vite-plugin-tauri" // 1. import the plugin
+import { defineConfig } from "vite";
+import tauri from "vite-plugin-tauri"; // 1. import the plugin
 
 export default defineConfig({
   plugins: [
@@ -32,19 +32,14 @@ export default defineConfig({
   // 3. optional but recommended
   clearScreen: false,
   server: {
-    open: false
+    open: false,
   },
-})
+});
 ```
 
-## Options
+## Configuration
 
-### `debug`
-
-- **Type:** `bool`
-- **Default:** `false`
-
-  Enable or disable building Tauri in debug mode.
+See the configuration options and documenation [here](./src/config.ts).
 
 ## Advanced Usage
 
@@ -61,9 +56,7 @@ export default defineConfig(
   mergeConfig(
     baseViteConfig,
     defineConfig({
-      plugins: [
-        tauri()
-      ],
+      plugins: [tauri()],
 
       // optional but recommended
       clearScreen: false,

@@ -2,11 +2,9 @@ import { Plugin, ResolvedConfig } from "vite";
 import { getTauriConfPath, initTauri } from "./utils";
 import TauriCli from "@tauri-apps/cli";
 import path, { dirname } from "path";
+import { ViteTauriPluginConfig } from "./config";
 
-export function tauri(options?: {
-  /** Enable or disable building Tauri in debug mode */
-  debug: boolean;
-}): Plugin[] {
+export function tauri(config?: ViteTauriPluginConfig): Plugin[] {
   let viteConfig: ResolvedConfig;
   return [
     {
@@ -48,7 +46,8 @@ export function tauri(options?: {
                   devPath: `${protocol}://${host}:${port}`,
                 },
               }),
-              ...(options?.debug ? ["--debug"] : []),
+              ...(config?.debug === true ? [] : ["--release"]),
+              ...(config?.target ? ["--target", config.target] : []),
             ],
             "vite-plugin-tauri"
           );
@@ -82,7 +81,8 @@ export function tauri(options?: {
                 ),
               },
             }),
-            ...(options?.debug ? ["--debug"] : []),
+            ...(config?.debug ? ["--debug"] : []),
+            ...(config?.target ? ["--target", config.target] : []),
           ],
           "vite-plugin-tauri"
         );
