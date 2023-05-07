@@ -1,5 +1,7 @@
 # Unreleased
 
+# [3.3.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.3.0...v3.2.0) (2023-5-7)
+
 - Add option to build with verbose logging
 - Fix regression in `3.2.0` where `dev` was always built with `--release` flag and devtools were inaccessible.
 
