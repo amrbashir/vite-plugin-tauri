@@ -8,4 +8,6 @@ export interface ViteTauriPluginConfig {
    * @see https://doc.rust-lang.org/nightly/rustc/platform-support.html for full list of targets
    */
   target?: string;
+  /** Enable or disable verbose logging for the Tauri CLI */
+  verbose?: boolean;
 }

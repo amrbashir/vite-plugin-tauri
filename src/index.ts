@@ -37,20 +37,22 @@ export function tauri(config?: ViteTauriPluginConfig): Plugin[] {
             : address.address;
           const port = address.port;
 
-          TauriCli.run(
-            [
-              "dev",
-              "--config",
-              JSON.stringify({
-                build: {
-                  devPath: `${protocol}://${host}:${port}`,
-                },
-              }),
-              ...(!config?.debug ? [] : ["--release"]),
-              ...(config?.target ? ["--target", config.target] : []),
-            ],
-            "vite-plugin-tauri"
-          );
+          const args = [
+            "dev",
+            "--config",
+            JSON.stringify({
+              build: {
+                devPath: `${protocol}://${host}:${port}`,
+              },
+            }),
+          ];
+
+          if (config?.debug !== undefined && !config.debug)
+            args.push("--release");
+          if (config?.target) args.push("--target", config.target);
+          if (config?.verbose) args.push("--verbose");
+
+          TauriCli.run(args, "vite-plugin-tauri");
         });
       },
     },
@@ -68,24 +70,25 @@ export function tauri(config?: ViteTauriPluginConfig): Plugin[] {
           tauriConfPath = getTauriConfPath();
         }
 
-        await TauriCli.run(
-          [
-            "build",
-            "--config",
-            JSON.stringify({
-              build: {
-                // at this point, `tauriConfPath` can't be null
-                distDir: path.relative(
-                  dirname(tauriConfPath!),
-                  path.resolve(viteConfig.build.outDir)
-                ),
-              },
-            }),
-            ...(config?.debug ? ["--debug"] : []),
-            ...(config?.target ? ["--target", config.target] : []),
-          ],
-          "vite-plugin-tauri"
-        );
+        const args = [
+          "build",
+          "--config",
+          JSON.stringify({
+            build: {
+              // at this point, `tauriConfPath` can't be null
+              distDir: path.relative(
+                dirname(tauriConfPath!),
+                path.resolve(viteConfig.build.outDir)
+              ),
+            },
+          }),
+        ];
+
+        if (config?.debug) args.push("--debug");
+        if (config?.target) args.push("--target", config.target);
+        if (config?.verbose) args.push("--verbose");
+
+        await TauriCli.run(args, "vite-plugin-tauri");
       },
     },
   ];
