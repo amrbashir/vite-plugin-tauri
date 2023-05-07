@@ -1,5 +1,7 @@
 # Unreleased
 
+- Fix regression in `3.2.0` where `dev` was always built with `--release` flag and devtools were inaccessible.
+
 # [3.2.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.2.0...v3.1.1) (2023-5-6)
 
 - Add option to specify the rust build target

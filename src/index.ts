@@ -46,7 +46,7 @@ export function tauri(config?: ViteTauriPluginConfig): Plugin[] {
                   devPath: `${protocol}://${host}:${port}`,
                 },
               }),
-              ...(config?.debug === true ? [] : ["--release"]),
+              ...(!config?.debug ? [] : ["--release"]),
               ...(config?.target ? ["--target", config.target] : []),
             ],
             "vite-plugin-tauri"
