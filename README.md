@@ -43,49 +43,49 @@ See the configuration options and documenation [here](./src/config.ts).
 
 ## Advanced Usage
 
-### Use a separate config for Tauri
+### Using a separate config for Tauri
 
-Create a `vite.config.tauri.js` with the following content
+You can use a separate config file to add the `vite-plugin-tauri` plugin
+which allows you to define a separate script in `package.json` to develop
+your tauri app that won't conflict with your normal vite web dev flow.
 
-```ts
-import { defineConfig, mergeConfig } from "vite";
-import baseViteConfig from "./vite.config";
-import tauri from "vite-plugin-tauri";
+1. Create a `vite.config.tauri.js` with the following content
+    ```ts
+    import { defineConfig, mergeConfig } from "vite";
+    import baseViteConfig from "./vite.config";
+    import tauri from "vite-plugin-tauri";
 
-export default defineConfig(
-  mergeConfig(
-    baseViteConfig,
-    defineConfig({
-      plugins: [tauri()],
+    export default defineConfig(
+      mergeConfig(
+        baseViteConfig,
+        defineConfig({
+          plugins: [tauri()],
 
-      // optional but recommended
-      clearScreen: false,
-      server: {
-        open: false,
+          // optional but recommended
+          clearScreen: false,
+          server: {
+            open: false,
+          },
+        })
+      )
+    );
+    ```
+
+2. Modify `package.json`:
+    ```diff
+    // package.json
+    {
+      ..
+      "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+    +   "dev:tauri": "vite --config vite.config.tauri.js",
+    +   "build:tauri": "vite build --config vite.config.tauri.js",
+        "preview": "vite preview"
       },
-    })
-  )
-);
-```
-
-Modify `package.json`:
-
-```diff
-// package.json
-{
-  ..
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-+   "dev:tauri": "vite --config vite.config.tauri.js",
-+   "build:tauri": "vite build --config vite.config.tauri.js",
-    "preview": "vite preview"
-  },
-  ..
-}
-```
-
-Now you can build or develop Tauri without chaning your existing web dev flow.
+      ..
+    }
+    ```
 
 ## License
 
