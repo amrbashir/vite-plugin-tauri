@@ -6,10 +6,20 @@
   "author": "Amr Bashir <amr.bashir2015@gmail.com>",
   "license": "MIT",
   "files": [
-    "dist"
+    "dist",
+    "CHANGELOG.md",
+    "LCIENSE",
+    "README.md"
   ],
   "type": "module",
-  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/index.js"
+  },
   "scripts": {
     "prepublishOnly": "pnpm run build",
     "build": "tsup src/index.ts --format esm --dts --clean",

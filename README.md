@@ -37,6 +37,16 @@ export default defineConfig({
 });
 ```
 
+## Tauri CLI arguments
+
+You can pass arguments to the tauri CLI by prefixing the args with `-- -t/--tauri`, for example:
+
+```sh
+pnpm dev -- -t --verbose --release
+```
+
+The `--` is necessary, otherwise `vite` will crash with unkown CLI argument and `-t` or `--tauri` marks the start of the tauri arguments.
+
 ## Configuration
 
 See the configuration options and documenation [here](./src/config.ts).
@@ -45,47 +55,45 @@ See the configuration options and documenation [here](./src/config.ts).
 
 ### Using a separate config for Tauri
 
-You can use a separate config file to add the `vite-plugin-tauri` plugin
+You can also use a separate config file to add the `vite-plugin-tauri` plugin
 which allows you to define a separate script in `package.json` to develop
-your tauri app that won't conflict with your normal vite web dev flow.
+your tauri app that won't conflict with your normal vite web development flow.
 
 1. Create a `vite.config.tauri.js` with the following content
-    ```ts
-    import { defineConfig, mergeConfig } from "vite";
-    import baseViteConfig from "./vite.config";
-    import tauri from "vite-plugin-tauri";
 
-    export default defineConfig(
-      mergeConfig(
-        baseViteConfig,
-        defineConfig({
-          plugins: [tauri()],
+   ```ts
+   import { defineConfig, mergeConfig } from "vite";
+   import baseViteConfig from "./vite.config";
+   import tauri from "vite-plugin-tauri";
 
-          // optional but recommended
-          clearScreen: false,
-          server: {
-            open: false,
-          },
-        })
-      )
-    );
-    ```
+   export default defineConfig(
+     mergeConfig(baseViteConfig, {
+       plugins: [tauri()],
+
+       // optional but recommended
+       clearScreen: false,
+       server: {
+         open: false,
+       },
+     }),
+   );
+   ```
 
 2. Modify `package.json`:
-    ```diff
-    // package.json
-    {
-      ..
-      "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-    +   "dev:tauri": "vite --config vite.config.tauri.js",
-    +   "build:tauri": "vite build --config vite.config.tauri.js",
-        "preview": "vite preview"
-      },
-      ..
-    }
-    ```
+   ```diff
+   // package.json
+   {
+     ..
+     "scripts": {
+       "dev": "vite",
+       "build": "vite build",
+   +   "dev:tauri": "vite --config vite.config.tauri.js",
+   +   "build:tauri": "vite build --config vite.config.tauri.js",
+       "preview": "vite preview"
+     },
+     ..
+   }
+   ```
 
 ## License
 

@@ -1,4 +1,4 @@
-import { Plugin, ResolvedConfig } from "vite";
+import { PluginOption, ResolvedConfig } from "vite";
 import { confirm, getPackageJson } from "./utils";
 import { ViteTauriPluginConfig } from "./config";
 import TauriCli from "@tauri-apps/cli";
@@ -48,7 +48,22 @@ async function initTauri(args?: string[]) {
   console.log("Tauri initialized.");
 }
 
-export function tauri(config?: ViteTauriPluginConfig): Plugin[] {
+function parseTauriArgs(args: string[]): string[] | null {
+  const lastDoubleDash = args.lastIndexOf("--");
+  if (lastDoubleDash !== -1) {
+    const tauriArg =
+      args.indexOf("-t", lastDoubleDash) ??
+      args.indexOf("--tauri", lastDoubleDash);
+
+    const tauriArgs = tauriArg !== -1 ? args.slice(tauriArg + 1) : null;
+
+    return tauriArgs;
+  }
+
+  return null;
+}
+
+export function tauri(_config?: ViteTauriPluginConfig): PluginOption {
   let viteConfig: ResolvedConfig;
   return [
     {
@@ -81,8 +96,12 @@ export function tauri(config?: ViteTauriPluginConfig): Plugin[] {
             : address.address;
           const port = address.port;
 
-          const args = [
-            "dev",
+          let args = parseTauriArgs(process.argv) ?? [];
+          if (!args.includes("dev") && !args.includes("build")) {
+            args = ["dev", ...args];
+          }
+          args = [
+            ...args,
             "--config",
             JSON.stringify({
               build: {
@@ -90,11 +109,6 @@ export function tauri(config?: ViteTauriPluginConfig): Plugin[] {
               },
             }),
           ];
-
-          if (config?.debug !== undefined && !config.debug)
-            args.push("--release");
-          if (config?.target) args.push("--target", config.target);
-          if (config?.verbose) args.push("--verbose");
 
           TauriCli.run(args, "vite-plugin-tauri");
         });
@@ -114,8 +128,12 @@ export function tauri(config?: ViteTauriPluginConfig): Plugin[] {
           tauriConfPath = getTauriConfPath();
         }
 
-        const args = [
-          "build",
+        let args = parseTauriArgs(process.argv) ?? [];
+        if (!args.includes("dev") && !args.includes("build")) {
+          args = ["build", ...args];
+        }
+        args = [
+          ...args,
           "--config",
           JSON.stringify({
             build: {
@@ -127,10 +145,6 @@ export function tauri(config?: ViteTauriPluginConfig): Plugin[] {
             },
           }),
         ];
-
-        if (config?.debug) args.push("--debug");
-        if (config?.target) args.push("--target", config.target);
-        if (config?.verbose) args.push("--verbose");
 
         await TauriCli.run(args, "vite-plugin-tauri");
       },
