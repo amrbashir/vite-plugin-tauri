@@ -1,3 +1,5 @@
+[![StandWithPalestine](https://raw.githubusercontent.com/Safouene1/support-palestine-banner/master/StandWithPalestine.svg)](https://techforpalestine.org/learn-more)
+
 # vite-plugin-tauri
 
 Integrate [Tauri](https://github.com/tauri-apps/tauri) in a [Vite](https://github.com/vitejs/vite) project to build cross-platform apps
