@@ -1,6 +1,5 @@
 import { PluginOption, ResolvedConfig } from "vite";
 import { confirm, getPackageJson } from "./utils";
-import { ViteTauriPluginConfig } from "./config";
 import TauriCli from "@tauri-apps/cli";
 import path, { dirname } from "path";
 import fg from "fast-glob";
@@ -63,7 +62,7 @@ function parseTauriArgs(args: string[]): string[] | null {
   return null;
 }
 
-export function tauri(_config?: ViteTauriPluginConfig): PluginOption {
+export function tauri(_config?: {}): PluginOption {
   let viteConfig: ResolvedConfig;
   return [
     {

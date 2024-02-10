@@ -49,10 +49,6 @@ pnpm dev -- -t --verbose --release
 
 The `--` is necessary, otherwise `vite` will crash with unkown CLI argument and `-t` or `--tauri` marks the start of the tauri arguments.
 
-## Configuration
-
-See the configuration options and documenation [here](./src/config.ts).
-
 ## Advanced Usage
 
 ### Using a separate config for Tauri
