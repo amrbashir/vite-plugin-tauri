@@ -1,5 +1,4 @@
 import { defineConfig } from "vite";
-import { tauri } from "vite-plugin-tauri";
 import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
