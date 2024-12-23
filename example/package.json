@@ -11,13 +11,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.3.11"
+    "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^1.5.7",
-    "@vitejs/plugin-vue": "^4.5.2",
-    "vite": "^5.0.7",
-    "vite-plugin-tauri": "workspace:",
-    "typescript": "^5.2.2"
+    "@tauri-apps/cli": "^2.1.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5",
+    "vite-plugin-tauri": "workspace:^"
   }
 }

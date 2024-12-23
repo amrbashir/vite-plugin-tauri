@@ -1,10 +1,11 @@
 import { PluginOption, ResolvedConfig } from "vite";
 import { confirm, getPackageJson } from "./utils";
 import TauriCli from "@tauri-apps/cli";
+import { getPackageInfoSync } from "local-pkg";
 import path, { dirname } from "path";
 import fg from "fast-glob";
 
-export function getTauriConfPath(): string | null {
+function getTauriConfPath(): string | null {
   const tauriDepthEnv = process.env.TAURI_PATH_DEPTH;
   const deep = tauriDepthEnv ? parseInt(tauriDepthEnv) : 3;
 
@@ -16,7 +17,11 @@ export function getTauriConfPath(): string | null {
   })[0];
 }
 
-async function initTauri(args?: string[]) {
+const tauriVersion = Number(
+  getPackageInfoSync("@tauri-apps/cli")?.version?.split(".")[0] ?? 2,
+);
+
+async function initTauri() {
   const confirmed = await confirm(
     "Couldn't find a Tauri project in current directory, would you like to initialize a new one?",
   );
@@ -32,15 +37,10 @@ async function initTauri(args?: string[]) {
       pkgName ?? "tauri-app",
       "--window-title",
       (pkgName ?? "tauri-app") + " window",
-      "--dist-dir",
+      tauriVersion === 1 ? "--dist-dir" : "--frontend-dist",
       `Injected by vite-plugin-tauri, you can change this if you want to use tauri cli directly`,
-      "--dev-path",
-      `Injected by vite-plugin-tauri, you can change this if you want to use tauri cli directly`,
-      "--before-build-command",
-      "",
-      "--before-dev-command",
-      "",
-      ...(args ?? []),
+      tauriVersion === 1 ? "--dev-path" : "--dev-url",
+      `Injected: by vite-plugin-tauri, you can change this if you want to use tauri cli directly`,
     ],
     "vite-tauri",
   );
@@ -104,7 +104,8 @@ export function tauri(_config?: {}): PluginOption {
             "--config",
             JSON.stringify({
               build: {
-                devPath: `${protocol}://${host}:${port}`,
+                [tauriVersion === 1 ? "devPath" : "devUrl"]:
+                  `${protocol}://${host}:${port}`,
               },
             }),
           ];
@@ -131,13 +132,14 @@ export function tauri(_config?: {}): PluginOption {
         if (!args.includes("dev") && !args.includes("build")) {
           args = ["build", ...args];
         }
+
         args = [
           ...args,
           "--config",
           JSON.stringify({
             build: {
               // at this point, `tauriConfPath` can't be null
-              distDir: path.relative(
+              [tauriVersion === 1 ? "distDir" : "frontendDist"]: path.relative(
                 dirname(tauriConfPath!),
                 path.resolve(viteConfig.build.outDir),
               ),

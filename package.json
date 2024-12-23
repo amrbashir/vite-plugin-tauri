@@ -30,19 +30,20 @@
     "deps:up": "pnpm dlx taze latest -w -i"
   },
   "dependencies": {
-    "fast-glob": "^3.3.2"
+    "fast-glob": "^3.3.2",
+    "local-pkg": "^0.5.1"
   },
   "peerDependencies": {
     "@tauri-apps/cli": ">= 1",
     "vite": ">= 2"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^1.5.7",
-    "@types/node": "^20.10.4",
-    "prettier": "^3.1.0",
-    "tsup": "^8.0.1",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.7"
+    "@tauri-apps/cli": "^2.1.0",
+    "@types/node": "^22.10.2",
+    "prettier": "^3.4.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
   },
   "resolutions": {
     "minimatch": ">=3.0.5"
@@ -55,5 +56,6 @@
     "vite-plugin",
     "tauri",
     "tauri-plugin"
-  ]
+  ],
+  "packageManager": "pnpm@9.12.2"
 }
