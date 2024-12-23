@@ -1,5 +1,6 @@
-# [4.0.0] Unreleased
+# [4.0.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v4.0.0...v3.3.0) (2024-12-23)
 
+- Add support for Tauri v2.
 - Parse Tauri CLI arguments from `process.argv` so now you could pass `-- -t/--tauri <tauri-cli-argument>`.
 - **Breaking change**: Removed `debug`, `verbose`, and `target` config options, instead, you should pass these options as Tauri CLI arguments.
 
