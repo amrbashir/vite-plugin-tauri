@@ -20,7 +20,7 @@ jobs:
       - run: pnpm install
       - run: pnpm build
       - run: pnpm ts:check
-      - run: pnpm format:check
+      - run: pnpm fmt:check
       - name: install system dependencies
         run: |
           sudo apt-get update

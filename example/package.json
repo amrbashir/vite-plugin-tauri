@@ -1,23 +1,23 @@
 {
-  "name": "vite-project",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "dev:tauri": "vite --config vite.config.tauri.js",
-    "build:tauri": "vite build --config vite.config.tauri.js",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "vue": "^3.5.13"
-  },
-  "devDependencies": {
-    "@tauri-apps/cli": "^2.1.0",
-    "@vitejs/plugin-vue": "^5.2.1",
-    "typescript": "^5.7.2",
-    "vite": "^6.0.5",
-    "vite-plugin-tauri": "workspace:^"
-  }
+	"name": "vite-project",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"dev:tauri": "vite --config vite.config.tauri.js",
+		"build:tauri": "vite build --config vite.config.tauri.js",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"vue": "^3.5.13"
+	},
+	"devDependencies": {
+		"@tauri-apps/cli": "^2.1.0",
+		"@vitejs/plugin-vue": "^5.2.1",
+		"typescript": "^5.7.2",
+		"vite": "^6.0.5",
+		"vite-plugin-tauri": "workspace:^"
+	}
 }

@@ -20,7 +20,6 @@
 # [3.1.0](https://github.com/amrbashir/vite-plugin-tauri/compare/v3.1.0...v3.0.2) (2022-10-1)
 
 - Add a default export to the plugin which allows two styles of importing:
-
   - Named export (current):
     ```ts
     import { tauri } from "vite-plugin-tauri";

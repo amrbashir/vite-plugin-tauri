@@ -1,6 +1,6 @@
 {
-  "identifier": "default",
-  "local": true,
-  "windows": ["main"],
-  "permissions": ["core:default"]
+	"identifier": "default",
+	"local": true,
+	"windows": ["main"],
+	"permissions": ["core:default"]
 }

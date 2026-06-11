@@ -1,61 +1,61 @@
 {
-  "name": "vite-plugin-tauri",
-  "version": "4.0.0",
-  "description": "Integrate Tauri in a Vite project to build cross-platform apps.",
-  "repository": "https://github.com/amrbashir/vite-plugin-tauri.git",
-  "author": "Amr Bashir <amr.bashir2015@gmail.com>",
-  "license": "MIT",
-  "files": [
-    "dist",
-    "CHANGELOG.md",
-    "LCIENSE",
-    "README.md"
-  ],
-  "type": "module",
-  "types": "./dist/index.d.ts",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "exports": {
-    "types": "./dist/index.d.ts",
-    "import": "./dist/index.js",
-    "require": "./dist/index.js"
-  },
-  "scripts": {
-    "prepublishOnly": "pnpm run build",
-    "build": "tsup src/index.ts --format esm --dts --clean",
-    "watch": "tsup src/index.ts --watch --format esm --dts --clean",
-    "ts:check": "tsc --noEmit",
-    "format": "prettier --write \"./**/*.{js,ts,json,vue,html}\" --ignore-path .gitignore",
-    "format:check": "prettier --check \"./**/*.{js,ts,json,vue,html}\" --ignore-path .gitignore",
-    "deps:up": "pnpm dlx taze latest -w -i"
-  },
-  "dependencies": {
-    "fast-glob": "^3.3.2",
-    "local-pkg": "^0.5.1"
-  },
-  "peerDependencies": {
-    "@tauri-apps/cli": ">= 1",
-    "vite": ">= 2"
-  },
-  "devDependencies": {
-    "@tauri-apps/cli": "^2.1.0",
-    "@types/node": "^22.10.2",
-    "prettier": "^3.4.2",
-    "tsup": "^8.3.5",
-    "typescript": "^5.7.2",
-    "vite": "^6.0.5"
-  },
-  "resolutions": {
-    "minimatch": ">=3.0.5"
-  },
-  "engines": {
-    "node": ">=14.6.0"
-  },
-  "keywords": [
-    "vite",
-    "vite-plugin",
-    "tauri",
-    "tauri-plugin"
-  ],
-  "packageManager": "pnpm@9.12.2"
+	"name": "vite-plugin-tauri",
+	"version": "4.0.0",
+	"description": "Integrate Tauri in a Vite project to build cross-platform apps.",
+	"keywords": [
+		"tauri",
+		"tauri-plugin",
+		"vite",
+		"vite-plugin"
+	],
+	"license": "MIT",
+	"author": "Amr Bashir <amr.bashir2015@gmail.com>",
+	"repository": "https://github.com/amrbashir/vite-plugin-tauri.git",
+	"files": [
+		"dist",
+		"CHANGELOG.md",
+		"LCIENSE",
+		"README.md"
+	],
+	"type": "module",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		"types": "./dist/index.d.ts",
+		"import": "./dist/index.js",
+		"require": "./dist/index.js"
+	},
+	"scripts": {
+		"prepublishOnly": "pnpm run build",
+		"build": "tsup src/index.ts --format esm --dts --clean",
+		"watch": "tsup src/index.ts --watch --format esm --dts --clean",
+		"ts:check": "tsc --noEmit",
+		"fmt": "oxfmt",
+		"fmt:check": "oxfmt --check",
+		"deps:up": "pnpm dlx taze latest -w -i"
+	},
+	"dependencies": {
+		"fast-glob": "^3.3.2",
+		"local-pkg": "^0.5.1"
+	},
+	"devDependencies": {
+		"@tauri-apps/cli": "^2.1.0",
+		"@types/node": "^22.10.2",
+		"oxfmt": "^0.54.0",
+		"tsup": "^8.3.5",
+		"typescript": "^5.7.2",
+		"vite": "^6.0.5"
+	},
+	"peerDependencies": {
+		"@tauri-apps/cli": ">= 1",
+		"vite": ">= 2"
+	},
+	"resolutions": {
+		"minimatch": ">=3.0.5"
+	},
+	"engines": {
+		"node": ">=14.6.0"
+	},
+	"packageManager": "pnpm@9.12.2"
 }
