@@ -3,18 +3,21 @@ on:
     tags:
       - "v*"
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: corepack enable
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
+          node-version: "24"
           registry-url: "https://registry.npmjs.org"
-          cache: pnpm
-      - run: pnpm install
+          package-manager-cache: false
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
       - run: pnpm build
       - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
