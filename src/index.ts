@@ -48,7 +48,8 @@ async function initTauri() {
 function parseTauriArgs(args: string[]): string[] | null {
 	const lastDoubleDash = args.lastIndexOf("--");
 	if (lastDoubleDash !== -1) {
-		const tauriArg = args.indexOf("-t", lastDoubleDash) ?? args.indexOf("--tauri", lastDoubleDash);
+		const shortFlag = args.indexOf("-t", lastDoubleDash);
+		const tauriArg = shortFlag !== -1 ? shortFlag : args.indexOf("--tauri", lastDoubleDash);
 
 		const tauriArgs = tauriArg !== -1 ? args.slice(tauriArg + 1) : null;
 
