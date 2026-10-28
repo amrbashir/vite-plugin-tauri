@@ -57,5 +57,12 @@
 	"engines": {
 		"node": ">=14.6.0"
 	},
-	"packageManager": "pnpm@9.12.2"
+	"packageManager": "pnpm@9.12.2",
+	"pnpm": {
+		"overrides": {
+			"tsup>esbuild": "^0.28.1",
+			"bundle-require>esbuild": "^0.28.1",
+			"oxfmt>tinypool": "^2.1.2"
+		}
+	}
 }
