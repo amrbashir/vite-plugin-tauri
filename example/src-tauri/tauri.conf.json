@@ -5,7 +5,7 @@
 	"version": "0.1.0",
 	"identifier": "com.vite-plugin-tauri.dev",
 	"build": {
-		"devUrl": "Injected: by vite-plugin-tauri",
+		"devUrl": "http://localhost:5173",
 		"frontendDist": "Injected by vite-plugin-tauri"
 	},
 	"app": {
