@@ -1,6 +1,6 @@
 {
 	"name": "vite-plugin-tauri",
-	"version": "4.0.0",
+	"version": "4.0.1",
 	"description": "Integrate Tauri in a Vite project to build cross-platform apps.",
 	"keywords": [
 		"tauri",
