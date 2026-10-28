@@ -1,4 +1,4 @@
-# Unreleased
+# [4.0.1](https://github.com/amrbashir/vite-plugin-tauri/compare/v4.0.0...v4.0.1) (2026-10-28)
 
 - Fix forwarding Tauri CLI arguments passed after the `--tauri` flag.
 
